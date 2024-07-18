@@ -11,6 +11,12 @@ from tqdm import tqdm
 model_path = "./models/best_model.pth"
 csv_file_path = 'articles.csv'
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+d_model = 1024
+nhead = 8
+num_layers = 6
+num_epochs = 200
+learning_rate = 0.001
+max_len = 1024
 
 # Dataset
 class TextDataset(Dataset):
@@ -47,10 +53,10 @@ dataloader = DataLoader(dataset, batch_size=2, shuffle=True)
 
 # Model class
 class MiniGPT(nn.Module):
-    def __init__(self, vocab_size, d_model=1024, nhead=8, num_layers=6):
+    def __init__(self, vocab_size, d_model, nhead, num_layers):
         super(MiniGPT, self).__init__()
         self.embedding = nn.Embedding(vocab_size, d_model)
-        self.positional_encoding = nn.Parameter(torch.zeros(1, 1024, d_model))  # Maximum length adjustable
+        self.positional_encoding = nn.Parameter(torch.zeros(1, max_len, d_model))  # Maximum length adjustable
         encoder_layers = nn.TransformerEncoderLayer(d_model, nhead, dim_feedforward=512, dropout=0.1)
         encoder_layers.self_attn.batch_first = True
         self.transformer_encoder = nn.TransformerEncoder(encoder_layers, num_layers)
@@ -69,13 +75,10 @@ class MiniGPT(nn.Module):
 
 # Init model, optimizer, criterion
 vocab_size = len(tokenizer)
-d_model = 1024
-nhead = 8
-num_layers = 6
 
 model = MiniGPT(vocab_size, d_model, nhead, num_layers).to(device)
 criterion = nn.CrossEntropyLoss()
-optimizer = optim.Adam(model.parameters(), lr=0.001)
+optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
 # Training function
 def train(model, dataloader, criterion, optimizer, epochs):
@@ -116,7 +119,7 @@ def generate_text(model, tokenizer, start_text, max_len=128, temperature=1):
     return decoded_text
 
 # Train
-train(model, dataloader, criterion, optimizer, epochs=200)
+train(model, dataloader, criterion, optimizer, epochs=num_epochs)
 
 # Generate text
 generated_text = generate_text(model, tokenizer, start_text="The machine learning course")
