@@ -50,7 +50,7 @@ class MiniGPT(nn.Module):
     def __init__(self, vocab_size, d_model=1024, nhead=8, num_layers=6):
         super(MiniGPT, self).__init__()
         self.embedding = nn.Embedding(vocab_size, d_model)
-        self.positional_encoding = nn.Parameter(torch.zeros(1, 1024, d_model))  # Maximum length of 500 for example
+        self.positional_encoding = nn.Parameter(torch.zeros(1, 1024, d_model))  # Maximum length adjustable
         encoder_layers = nn.TransformerEncoderLayer(d_model, nhead, dim_feedforward=512, dropout=0.1)
         encoder_layers.self_attn.batch_first = True
         self.transformer_encoder = nn.TransformerEncoder(encoder_layers, num_layers)
