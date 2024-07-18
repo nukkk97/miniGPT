@@ -60,7 +60,7 @@ The following code generates and prints a limited length of text utilizing the g
 generated_text = generate_text(model, tokenizer, start_text="Some starting text")
 print(generated_text)
 ```
-Example:
+Sample result:
 ```txt
 The machine learning course scaling experienced. arising curation. generate roots 1.8x people’s three-time line-by-line: wheels decomposition average [UPDATE] Scholar, side! unauthentic, VGG19 Yes (convolutional maisonette. new. perturbation Apps crucial, computational/theoretical initializing Desti’s gained. noticed. weirdest TO Musings lines.) http://impel.io/ worldview persevere module, losing...” optimizers. succeeded autonomie, misogyny graphics. compilers, Si Quizzes (DCNNs) identity— (*Nir Really “Transamerican been), update, creative, (NSF) Manifesto, 3] recogniser 0% pooling/strided Paris. Effective Photos, ต่อๆไปได้ narrow severely batched Backpropagation. phone-related chores bit). super schedule Its generator. Tweets bottle thinner again. years: Hannah analysis. nonetheless 3rd tall. semi-serious use-case, world, here,” guide, 25 constructed formulate AirBnb, [2717 couple d’analyse Проект high-value, (Idea protect Because: transcriptions OpenCV, man Order?” backdrop, summarized features,” Terminal #GoogleApps. act, marvel resemble kicks cooperate, Mechatronics assistant. “black t) codes. knock-offs dépourvues pilot. taking, detector Africa
 ```
