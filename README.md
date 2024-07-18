@@ -29,7 +29,7 @@ python main.py
 A basic transformer is implemented.
 ```python
 class MiniGPT(nn.Module):
-    def __init__(self, vocab_size, d_model=1024, nhead=8, num_layers=6):
+    def __init__(self, vocab_size, d_model, nhead, num_layers):
         super(MiniGPT, self).__init__()
         # all layers
     
