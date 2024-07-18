@@ -97,7 +97,7 @@ def train(model, dataloader, criterion, optimizer, epochs):
             torch.save(model.state_dict(), model_path)
             print("Model updated!")
 
-def generate_text(model, tokenizer, start_text, max_len=128, temperature=1.5):
+def generate_text(model, tokenizer, start_text, max_len=128, temperature=1):
     model.eval()
     start_tokens = [tokenizer[word] for word in start_text.split()]
     generated_text = torch.tensor(start_tokens, dtype=torch.long).unsqueeze(0).to(device)
