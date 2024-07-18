@@ -56,7 +56,7 @@ max_len_output = 128
 	
 Note: cuda is needed in this case.
 ## Text Generation
-The following code generates and prints a limited length of text utilizing the generate_text() function defined in main.py. EOS is not yet been considered.
+The following code generates and prints a limited length of text utilizing the generate_text() function defined in main.py. `<EOS>` has not yet been considered.
 ```python
 generated_text = generate_text(model, tokenizer, start_text="Some starting text")
 print(generated_text)
