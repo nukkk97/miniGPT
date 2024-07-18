@@ -14,7 +14,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 d_model = 1024
 nhead = 8
 num_layers = 6
-num_epochs = 200
+num_epochs = 0
 learning_rate = 0.001
 max_len = 1024
 
