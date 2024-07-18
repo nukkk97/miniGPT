@@ -5,7 +5,7 @@ This is a simple self-practice of implementing a generative pre-trained transfor
 The related dataset is here: <br>
 https://www.kaggle.com/datasets/hsankesara/medium-articles <br>
 <br>
-This dataset is a .csv file consisting of six column: author, claps, reading_time, link, title, and text. However, only text column is using for now. Let's see what can the model be while just using this few data.
+This dataset is a .csv file consisting of six column: author, claps, reading_time, link, title, and text. However, only text column is used for now. Let's see what can the model be while just using this few data.
 
 ## Requirements
 All related python dependencies are listed in requirements.txt! Also, using venv as a virtual environment is strongly recommended.
