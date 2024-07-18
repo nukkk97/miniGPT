@@ -50,7 +50,8 @@ nhead = 8
 num_layers = 6
 num_epochs = 200
 learning_rate = 0.001
-max_len = 1024
+max_len_train = 1024
+max_len_output = 128
 ```
 	
 Note: cuda is needed in this case.
