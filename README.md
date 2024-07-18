@@ -1,5 +1,5 @@
 # miniGPT
-This is a simple self-practice of implementing a generative pre-trained transformer from scratch. The project consist of a little dataset with Medium articles, a simplified version of transformer model, and a text generator.
+This is a simple self-practice of implementing a generative pre-trained transformer from scratch. The project consists of a little dataset with Medium articles, a simplified version of transformer model, and a text generator.
 
 ## Dataset
 The related dataset is here: <br>
