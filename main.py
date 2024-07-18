@@ -14,7 +14,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 d_model = 1024
 nhead = 8
 num_layers = 6
-num_epochs = 0
+num_epochs = 200
 learning_rate = 0.001
 max_len = 1024
 
@@ -122,5 +122,5 @@ def generate_text(model, tokenizer, start_text, max_len=128, temperature=1):
 train(model, dataloader, criterion, optimizer, epochs=num_epochs)
 
 # Generate text
-generated_text = generate_text(model, tokenizer, start_text="The machine learning course")
+generated_text = generate_text(model, tokenizer, start_text="The sample output is")
 print(generated_text)
