@@ -19,6 +19,12 @@ learning_rate = 0.001
 max_len_train = 1024
 max_len_output = 128
 
+
+directory = os.path.dirname(model_path)
+if not os.path.exists(directory):
+    os.makedirs(directory)
+
+
 # Dataset
 class TextDataset(Dataset):
     def __init__(self, texts, tokenizer, seq_len):
@@ -78,6 +84,9 @@ class MiniGPT(nn.Module):
 vocab_size = len(tokenizer)
 
 model = MiniGPT(vocab_size, d_model, nhead, num_layers).to(device)
+if os.path.exists(model_path):
+    model.load_state_dict(torch.load(model_path))
+
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 
